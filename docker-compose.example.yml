@@ -5,23 +5,11 @@ services:
     restart: unless-stopped
     network_mode: host
     environment:
-      # Required: Your central monitoring server
-      CENTRAL_URL: https://your-central-server.com
-      
-      # Required: One-time enrollment code from your dashboard admin
-      ENROLL_CODE: YOUR-ENROLLMENT-CODE-HERE
-      
-      # Optional: Friendly name for this Pi (defaults to hostname)
-      PI_HOSTNAME: pi-store-001
-      
-      # Optional: Sync intervals in seconds
-      # SYNC_INTERVAL: 30
-      # CONFIG_SYNC_INTERVAL: 30
-      
+      CENTRAL_URL: https://your-central-url
+      ENROLL_CODE: YOUR-ENROLLMENT-CODE
+      PI_HOSTNAME: ${HOSTNAME:-pi}
     volumes:
-      # Persistent storage for SQLite database and enrollment config
       - ./data:/data
-      
     logging:
       driver: json-file
       options:

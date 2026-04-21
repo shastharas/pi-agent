@@ -95,4 +95,10 @@ python sync_worker.py &
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file.
+MIT — see LICENSE file.
+
+## Contributing
+
+This image pairs with a central server that provides the enrollment endpoint 
+and ingests ping results. The server side is proprietary; only the Pi agent 
+is open source.
